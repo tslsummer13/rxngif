@@ -11,3 +11,26 @@
  *= require_self
  *= require_tree .
  */
+
+nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+nav li {
+  border: thin black solid;
+  float: left;
+  padding: 0 10px;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.brand {
+  font-weight: bold;
+}
+
+.clearfix {
+  clear: both;
+}
