@@ -3,9 +3,10 @@
 <ul>
   <% @pictures.each do |picture| %>
     <li>
-      <a href="http://localhost:3000/pictures/<%= @pictures.index(picture) %>">
+      <%= link_to(picture[:caption], "http://localhost:3000/pictures/#{@pictures.index(picture)}") %>
+<!--       <a href="http://localhost:3000/pictures/<%= @pictures.index(picture) %>">
         <%= picture[:caption] %>
-      </a>
+      </a> -->
     </li>
   <% end %>
 </ul>

@@ -1,5 +1,7 @@
 <h1>Picture Details</h1>
 
-<img width="240" src="<%= @picture[:source] %>">
+<!-- <img width="240" src="<%= @picture[:source] %>"> -->
+
+<%= image_tag(@picture[:source], :width => 240) %>
 
 <p><%= @picture[:caption] %></p>
