@@ -2,6 +2,10 @@
 
 <ul>
   <% @pictures.each do |picture| %>
-    <li><%= picture[:caption] %></li>
+    <li>
+      <a href="http://localhost:3000/pictures/<%= @pictures.index(picture) %>">
+        <%= picture[:caption] %>
+      </a>
+    </li>
   <% end %>
 </ul>
