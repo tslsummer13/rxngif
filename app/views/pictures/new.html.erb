@@ -1,6 +1,8 @@
 <h1>Add a New Picture</h1>
 
-<form action="http://localhost:3000/create_picture">
+<form action="http://localhost:3000/pictures" method="post">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>">
+
   <label for="source">Source URL:</label>
   <input id="source" type="text" name="source">
 
