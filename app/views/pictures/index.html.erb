@@ -1,7 +1,7 @@
 <h1>List of Pictures</h1>
 
 <ul>
-  <% @pictures.each do |pic| %>
+  <% @pictures.each do |picture| %>
     <li>
       <%= link_to(picture.caption, "http://localhost:3000/pictures/#{picture.id}") %>
     </li>
