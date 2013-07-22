@@ -1,13 +1,11 @@
 <h1>Add a New Picture</h1>
 
-<form action="http://localhost:3000/pictures" method="post">
-  <input name="authenticity_token" value="<%= form_authenticity_token %>">
+<%= form_tag "http://localhost:3000/pictures", method: "post" do %>
+  <%= label_tag :source, "Source URL:" %>
+  <%= text_field_tag :source %>
 
-  <label for="source">Source URL:</label>
-  <input id="source" type="text" name="source">
+  <%= label_tag :caption, "Caption:" %>
+  <%= text_field_tag :source %>
 
-  <label for="caption">Caption:</label>
-  <input id="caption" type="text" name="caption">
-
-  <input type="submit">
-</form>
+  <%= submit_tag "Create Picture" %>
+<% end %>
