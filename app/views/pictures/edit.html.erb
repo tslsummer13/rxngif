@@ -1,6 +1,6 @@
 <h1>Edit Picture #<%= @picture.id %></h1>
 
-<form action="http://localhost:3000/update_picture/<%= @picture.id %>">
+<form action="http://localhost:3000/pictures/<%= @picture.id %>/update">
   <label for="source">Source URL:</label>
   <input id="source" type="text" name="source" value="<%= @picture.source %>">
 
