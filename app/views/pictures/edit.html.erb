@@ -1,11 +1,13 @@
 <h1>Edit Picture #<%= @picture.id %></h1>
 
 <%= form_tag "http://localhost:3000/pictures/#{@picture.id}", method: "patch" do %>
-  <label for="source">Source URL:</label>
-  <input id="source" type="text" name="source" value="<%= @picture.source %>">
+  <%= label_tag :source, "Source URL:" %>
+  <%= text_field_tag :source, @picture.source %>
 
-  <label for="caption">Caption:</label>
-  <input id="caption" type="text" name="caption" value="<%= @picture.caption %>">
+  <%= label_tag :caption, "Caption:" %>
+  <%= text_field_tag :caption, @picture.caption %>
 
-  <input type="submit">
+  <%= submit_tag "Update Picture" %>
 <% end %>
+
+<%= link_to "Cancel", "http://localhost:3000/pictures/#{@picture.id}", class: "cancel-btn" %>

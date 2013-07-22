@@ -5,7 +5,9 @@
   <%= text_field_tag :source %>
 
   <%= label_tag :caption, "Caption:" %>
-  <%= text_field_tag :source %>
+  <%= text_field_tag :caption %>
 
   <%= submit_tag "Create Picture" %>
 <% end %>
+
+<%= link_to "Cancel", "http://localhost:3000/pictures", class: "cancel-btn" %>
