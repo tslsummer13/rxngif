@@ -19,4 +19,24 @@ class PicturesController < ApplicationController
 
     redirect_to "http://localhost:3000/pictures"
   end
+
+  def destroy
+    p = Picture.find(params[:id])
+    p.destroy
+
+    redirect_to "http://localhost:3000/pictures"
+  end
+
 end
+
+
+
+
+
+
+
+
+
+
+
+

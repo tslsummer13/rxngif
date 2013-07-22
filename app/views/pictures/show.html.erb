@@ -3,3 +3,5 @@
 <%= image_tag(@picture.source, width: 240) %>
 
 <p><%= @picture.caption%></p>
+
+<%= link_to "Toast", "http://localhost:3000/delete_picture/#{@picture.id}", confirm: "Are you sure?" %>
