@@ -10,6 +10,8 @@ Rxngif::Application.routes.draw do
   get "pictures/:id" => "pictures#show" # Display the details of one picture
 
   # UPDATE
+  get "edit_picture/:id" => "pictures#edit"
+  get "update_picture/:id" => "pictures#update"
 
   # DELETE
   get "delete_picture/:id" => "pictures#destroy"

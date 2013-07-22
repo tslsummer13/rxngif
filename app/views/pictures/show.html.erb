@@ -5,3 +5,4 @@
 <p><%= @picture.caption%></p>
 
 <%= link_to "Toast", "http://localhost:3000/delete_picture/#{@picture.id}", confirm: "Are you sure?" %>
+<%= link_to "Edit", "http://localhost:3000/edit_picture/#{@picture.id}" %>

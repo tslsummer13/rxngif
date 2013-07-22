@@ -3,10 +3,6 @@ class PicturesController < ApplicationController
     @pictures = Picture.all
   end
 
-  def show
-    @picture = Picture.find(params[:id])
-  end
-
   def new
 
   end
@@ -20,13 +16,30 @@ class PicturesController < ApplicationController
     redirect_to "http://localhost:3000/pictures"
   end
 
+  def show
+    @picture = Picture.find(params[:id])
+  end
+
   def destroy
-    p = Picture.find(params[:id])
-    p.destroy
+    @picture = Picture.find(params[:id])
+    @picture.destroy
 
     redirect_to "http://localhost:3000/pictures"
   end
 
+  def edit
+    @picture = Picture.find(params[:id])
+  end
+
+  def update
+    @picture = Picture.find(params[:id])
+
+    @picture.source = params[:source]
+    @picture.caption = params[:caption]
+    @picture.save
+
+    redirect_to "http://localhost:3000/pictures/#{@picture.id}"
+  end
 end
 
 
