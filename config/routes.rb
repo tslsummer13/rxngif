@@ -3,7 +3,7 @@ Rxngif::Application.routes.draw do
 
   # CREATE
   get "pictures/new" => "pictures#new" # Display a form for a new picture
-  get "create_picture" => "pictures#create" # Receives the new form data and adds a row
+  post "pictures" => "pictures#create" # Receives the new form data and adds a row
 
   # READ
   get "pictures" => "pictures#index" # Display a list of pictures
@@ -11,10 +11,10 @@ Rxngif::Application.routes.draw do
 
   # UPDATE
   get "pictures/:id/edit" => "pictures#edit"
-  get "pictures/:id/update" => "pictures#update"
+  patch "pictures/:id" => "pictures#update"
 
   # DELETE
-  get "pictures/:id/delete" => "pictures#destroy"
+  delete "pictures/:id" => "pictures#destroy"
 end
 
 
