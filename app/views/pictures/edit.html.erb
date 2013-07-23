@@ -1,6 +1,6 @@
 <h1>Edit Picture #<%= @picture.id %></h1>
 
-<%= form_tag "http://localhost:3000/pictures/#{@picture.id}", method: "patch" do %>
+<%= form_tag picture_url(@picture.id), method: "patch" do %>
   <%= label_tag :source, "Source URL:" %>
   <%= text_field_tag :source, @picture.source %>
 

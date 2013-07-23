@@ -15,6 +15,22 @@ Rxngif::Application.routes.draw do
 
   # DELETE
   delete "pictures/:id" => "pictures#destroy"
+
+
+  # CREATE
+  get "users/new" => "users#new" # Display a form for a new user
+  post "users" => "users#create" # Receives the new form data and adds a row
+
+  # READ
+  get "users" => "users#index" # Display a list of users
+  get "users/:id" => "users#show" # Display the details of one user
+
+  # UPDATE
+  get "users/:id/edit" => "users#edit"
+  patch "users/:id" => "users#update"
+
+  # DELETE
+  delete "users/:id" => "users#destroy"
 end
 
 
