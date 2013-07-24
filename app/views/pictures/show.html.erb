@@ -1,8 +1,15 @@
 <h1>Picture Details</h1>
 
+<h4>Illustration of the difference between <pre>picture_url</pre> and <pre>picture_path</pre></h4>
+<p><%= picture_url(@picture.id) %></p>
+<p><%= picture_path(@picture.id) %></p>
+
+
 <%= image_tag(@picture.source, width: 240) %>
 
 <p><%= @picture.caption%></p>
 
 <%= link_to "Toast", picture_url(@picture.id), confirm: "Are you sure?", method: "delete" %>
 <%= link_to "Edit", edit_picture_url(@picture.id) %>
+
+

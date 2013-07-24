@@ -1,20 +1,30 @@
 Rxngif::Application.routes.draw do
   root "pictures#index"
 
+  # If we want to name a logout URL, we can do:
+
+  # get "/logout" => "sessions#signout", as: "logout"
+
+  # And Rails will, behind the scenes, do something like:
+
+  # def logout_url
+  #   return "http://localhost:3000/logout"
+  # end
+
   # CREATE
-  get "pictures/new" => "pictures#new" # Display a form for a new picture
-  post "pictures" => "pictures#create" # Receives the new form data and adds a row
+  get "photos/new" => "pictures#new", as: "new_picture" # Display a form for a new picture
+  post "photos" => "pictures#create", as: "pictures" # Receives the new form data and adds a row
 
   # READ
-  get "pictures" => "pictures#index" # Display a list of pictures
-  get "pictures/:id" => "pictures#show" # Display the details of one picture
+  get "photos" => "pictures#index" # Display a list of pictures
+  get "photos/:id" => "pictures#show", as: "picture" # Display the details of one picture
 
   # UPDATE
-  get "pictures/:id/edit" => "pictures#edit"
-  patch "pictures/:id" => "pictures#update"
+  get "photos/:id/edit" => "pictures#edit", as: "edit_picture"
+  patch "photos/:id" => "pictures#update"
 
   # DELETE
-  delete "pictures/:id" => "pictures#destroy"
+  delete "photos/:id" => "pictures#destroy"
 
 
   # CREATE
