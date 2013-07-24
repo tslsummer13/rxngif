@@ -12,8 +12,7 @@ class PicturesController < ApplicationController
     p.source = params[:source]
     p.caption = params[:caption]
 
-    if p.source.present? && p.caption.present?
-      p.save
+    if p.save
       redirect_to "http://localhost:3000/pictures", notice: "Created picture successfully."
     else
       redirect_to "http://localhost:3000/pictures/new", notice: "Epic fail. Must provide both URL and caption."
@@ -41,8 +40,7 @@ class PicturesController < ApplicationController
     @picture.source = params[:source]
     @picture.caption = params[:caption]
 
-    if @picture.source.present? && @picture.caption.present?
-      @picture.save
+    if @picture.save
       redirect_to "http://localhost:3000/pictures", notice: "Updated picture successfully."
     else
       redirect_to "http://localhost:3000/pictures/#{@picture.id}/edit", notice: "Epic fail. Must provide both URL and caption."
