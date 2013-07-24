@@ -11,9 +11,13 @@ class PicturesController < ApplicationController
     p = Picture.new
     p.source = params[:source]
     p.caption = params[:caption]
-    p.save
 
-    redirect_to "http://localhost:3000/pictures"
+    if p.source.present? && p.caption.present?
+      p.save
+      redirect_to "http://localhost:3000/pictures", notice: "Created picture successfully."
+    else
+      redirect_to "http://localhost:3000/pictures/new", notice: "Epic fail. Must provide both URL and caption."
+    end
   end
 
   def show

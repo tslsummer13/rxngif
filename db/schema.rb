@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130724150027) do
+ActiveRecord::Schema.define(version: 20130724153433) do
 
   create_table "pictures", force: true do |t|
     t.string   "source"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20130724150027) do
     t.integer  "length"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "favorite"
   end
 
 end
