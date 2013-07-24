@@ -10,4 +10,4 @@
   <%= submit_tag "Update Picture" %>
 <% end %>
 
-<%= link_to "Cancel", "http://localhost:3000/pictures/#{@picture.id}", class: "cancel-btn" %>
+<%= link_to "Cancel", picture_url(@picture.id), class: "cancel-btn" %>

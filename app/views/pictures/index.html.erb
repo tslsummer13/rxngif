@@ -3,7 +3,7 @@
 <ul>
   <% @pictures.each do |picture| %>
     <li>
-      <%= link_to(picture.caption, "http://localhost:3000/pictures/#{picture.id}") %>
+      <%= link_to(picture.caption, picture_url(picture.id)) %>
     </li>
   <% end %>
 </ul>
