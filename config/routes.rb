@@ -12,19 +12,19 @@ Rxngif::Application.routes.draw do
   # end
 
   # CREATE
-  get "photos/new" => "pictures#new", as: "new_picture" # Display a form for a new picture
-  post "photos" => "pictures#create", as: "pictures" # Receives the new form data and adds a row
+  get "pictures/new" => "pictures#new", as: "new_picture" # Display a form for a new picture
+  post "pictures" => "pictures#create", as: "pictures" # Receives the new form data and adds a row
 
   # READ
-  get "photos" => "pictures#index" # Display a list of pictures
-  get "photos/:id" => "pictures#show", as: "picture" # Display the details of one picture
+  get "pictures" => "pictures#index" # Display a list of pictures
+  get "pictures/:id" => "pictures#show", as: "picture" # Display the details of one picture
 
   # UPDATE
-  get "photos/:id/edit" => "pictures#edit", as: "edit_picture"
-  patch "photos/:id" => "pictures#update"
+  get "pictures/:id/edit" => "pictures#edit", as: "edit_picture"
+  patch "pictures/:id" => "pictures#update"
 
   # DELETE
-  delete "photos/:id" => "pictures#destroy"
+  delete "pictures/:id" => "pictures#destroy"
 
 
   # CREATE
