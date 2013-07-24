@@ -40,9 +40,13 @@ class PicturesController < ApplicationController
 
     @picture.source = params[:source]
     @picture.caption = params[:caption]
-    @picture.save
 
-    redirect_to picture_url(@picture.id)
+    if @picture.source.present? && @picture.caption.present?
+      @picture.save
+      redirect_to "http://localhost:3000/pictures", notice: "Updated picture successfully."
+    else
+      redirect_to "http://localhost:3000/pictures/#{@picture.id}/edit", notice: "Epic fail. Must provide both URL and caption."
+    end
   end
 end
 
