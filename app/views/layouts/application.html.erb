@@ -17,7 +17,9 @@
     </div>
   </div>
 
-  <p><%= notice %></p>
+  <% if notice.present? %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
   <div class="container">
     <%= yield %>
   </div>
