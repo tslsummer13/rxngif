@@ -1,4 +1,8 @@
 class PicturesController < ApplicationController
+  def favorites
+    @favorites = Picture.where({ :favorite => true })
+  end
+
   def index
     @pictures = Picture.all
   end
@@ -16,7 +20,7 @@ class PicturesController < ApplicationController
     if p.save
       redirect_to "http://localhost:3000/pictures", notice: "Created picture successfully."
     else
-      redirect_to "http://localhost:3000/pictures/new", notice: "Epic fail. Must provide both URL and caption."
+      redirect_to "http://localhost:3000/pictures/new", notice: "Epic fail. Try again."
     end
   end
 
@@ -45,7 +49,7 @@ class PicturesController < ApplicationController
     if @picture.save
       redirect_to "http://localhost:3000/pictures", notice: "Updated picture successfully."
     else
-      redirect_to "http://localhost:3000/pictures/#{@picture.id}/edit", notice: "Epic fail. Must provide both URL and caption."
+      redirect_to "http://localhost:3000/pictures/#{@picture.id}/edit", notice: "Epic fail. Try again."
     end
   end
 end

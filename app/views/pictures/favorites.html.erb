@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="span6 offset3">
+    <h1>Favorites</h1>
+    <ul class="thumbnails">
+      <% @favorites.each do |picture| %>
+        <li>
+          <div class="thumbnail">
+            <%= image_tag picture.source, width: 360 %>
+            <div class="caption text-center">
+              <h3><%= picture.caption %></h3>
+              <p>
+                <%= link_to "Show", picture_url(picture.id), class: "btn btn-primary" %>
+                <%= link_to "Edit", edit_picture_url(picture.id), class: "btn btn-warning" %>
+                <%= link_to "Toast", picture_url(picture.id), method: 'delete', confirm: "Whoa! Really?", class: "btn btn-danger" %>
+              </p>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
