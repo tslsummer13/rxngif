@@ -11,6 +11,7 @@ class PicturesController < ApplicationController
     p = Picture.new
     p.source = params[:source]
     p.caption = params[:caption]
+    p.favorite = params[:favorite]
 
     if p.save
       redirect_to "http://localhost:3000/pictures", notice: "Created picture successfully."
@@ -39,6 +40,7 @@ class PicturesController < ApplicationController
 
     @picture.source = params[:source]
     @picture.caption = params[:caption]
+    @picture.favorite = params[:favorite]
 
     if @picture.save
       redirect_to "http://localhost:3000/pictures", notice: "Updated picture successfully."

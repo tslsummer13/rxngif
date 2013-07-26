@@ -15,7 +15,7 @@
 
       <fieldset>
         <%= label_tag :favorite, "Favorite?" %>
-        <%= check_box_tag :favorite %>
+        <%= check_box_tag :favorite, "1", @picture.favorite %>
       </fieldset>
       <br>
       <%= submit_tag "Update Picture", class: "btn btn-success" %>
