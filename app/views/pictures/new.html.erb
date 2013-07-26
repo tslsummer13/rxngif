@@ -1,13 +1,26 @@
-<h1>Add a New Picture</h1>
+<div class="row">
+  <div class="span6 offset3">
+    <h1>Add a New Picture</h1>
 
-<%= form_tag pictures_url, method: "post" do %>
-  <%= label_tag :source, "Source URL:" %>
-  <%= text_field_tag :source %>
+    <%= form_tag pictures_url, method: "post" do %>
+      <fieldset>
+        <%= label_tag :source, "Source URL:" %>
+        <%= text_field_tag :source %>
+      </fieldset>
 
-  <%= label_tag :caption, "Caption:" %>
-  <%= text_field_tag :caption %>
+      <fieldset>
+        <%= label_tag :caption, "Caption:" %>
+        <%= text_field_tag :caption %>
+      </fieldset>
 
-  <%= submit_tag "Create Picture" %>
-<% end %>
+      <fieldset>
+        <%= label_tag :favorite, "Favorite?" %>
+        <%= check_box_tag :favorite %>
+      </fieldset>
+      <br>
+      <%= submit_tag "Create Picture", class: "btn btn-success" %>
+      or <%= link_to "Cancel", pictures_url, class: "cancel-btn" %>
+    <% end %>
+  </div>
+</div>
 
-<%= link_to "Cancel", pictures_url, class: "cancel-btn" %>

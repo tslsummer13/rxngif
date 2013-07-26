@@ -1,13 +1,25 @@
-<h1>Edit Picture #<%= @picture.id %></h1>
+<div class="row">
+  <div class="span6 offset3">
+    <h1>Edit Picture #<%= @picture.id %></h1>
 
-<%= form_tag picture_url(@picture.id), method: "patch" do %>
-  <%= label_tag :source, "Source URL:" %>
-  <%= text_field_tag :source, @picture.source %>
+    <%= form_tag picture_url(@picture.id), method: "patch" do %>
+      <fieldset>
+        <%= label_tag :source, "Source URL:" %>
+        <%= text_field_tag :source, @picture.source %>
+      </fieldset>
 
-  <%= label_tag :caption, "Caption:" %>
-  <%= text_field_tag :caption, @picture.caption %>
+      <fieldset>
+        <%= label_tag :caption, "Caption:" %>
+        <%= text_field_tag :caption, @picture.caption %>
+      </fieldset>
 
-  <%= submit_tag "Update Picture" %>
-<% end %>
-
-<%= link_to "Cancel", picture_url(@picture.id), class: "cancel-btn" %>
+      <fieldset>
+        <%= label_tag :favorite, "Favorite?" %>
+        <%= check_box_tag :favorite %>
+      </fieldset>
+      <br>
+      <%= submit_tag "Update Picture", class: "btn btn-success" %>
+      or <%= link_to "Cancel", picture_url(@picture.id) %>
+    <% end %>
+  </div>
+</div>
